@@ -1,0 +1,23 @@
+canvas{
+    border: 2px solid black;
+    margin: 5px;
+    width: 300px;
+    height: 300px;
+}
+img{
+    border: 2px solid black;
+    margin: 5px;
+    width: 300px;
+    height: 300px;
+}
+h1{
+    font-family: 'Khula', sans-serif;
+    font-weight: 450;
+    font-size: 16pt;
+}
+p{
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: x-large;
+}
