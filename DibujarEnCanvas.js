@@ -10,6 +10,7 @@ var line = 0;
 var fromY = 0;
 var toX = 300;
 var contentTextBox = maxWidth.value;
+console.log(maxWidth);
 function Dibujar(fromXf, toXf, fromYf, toYf, colorf){
     if (colorf == undefined)
     {
@@ -22,11 +23,8 @@ function Dibujar(fromXf, toXf, fromYf, toYf, colorf){
     lienzo.stroke();
     lienzo.closePath();
 }
-console.log(contentTextBox === 'pink floid');
-console.log(maxWidth.value == 'pink floid');
-if(contentTextBox == 'pink floid'){    
-    dibujarPinkFloid();
-}
+
+
 
 function dibujarPinkFloid(){
     var i;
@@ -68,14 +66,14 @@ function dibujarPinkFloid(){
             coordenadas.A[1],
             coordenadas.B[1],
             "rgba(255,255,255,1)");
+        
 }
 
-function dibuCiclo(){
+function dibuCiclo(TextBox){
     alert("ay!");
-    contentTextBox = maxWidth.value;
-    console.log(contentTextBox == 'pink floid');
-    console.log(maxWidth.value == 'pink floid');
-    while(line < contentTextBox){
+    TextBox = parseInt(contentTextBox);
+    console.log(TextBox);
+    while(line < TextBox){
         fromX = 10 * line;
         toY = 10 * (line + 1);
         line += 1;
