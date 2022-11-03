@@ -24,6 +24,7 @@ function Dibujar(fromXf, toXf, fromYf, toYf, colorf){
     lienzo.closePath();
 }
 
+//aniado un comentario para comprobar el commit, stage
 
 
 function dibujarPinkFloid(){
