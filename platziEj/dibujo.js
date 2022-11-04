@@ -1,3 +1,5 @@
+
+
 var texto = document.getElementById("texto_lineas");
 var boton = document.getElementById("botoncito");
 boton.addEventListener("click", dibujoPorClick);
@@ -5,9 +7,9 @@ boton.addEventListener("click", dibujoPorClick);
 var d = document.getElementById("dibujito");
 var ancho = d.width;
 var lienzo = d.getContext("2d");
+//TODO: enlazar documentos js
 
-
-function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
+export function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
 {
   lienzo.beginPath();
   lienzo.strokeStyle = color;
@@ -17,7 +19,7 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
   lienzo.closePath();
 }
 
-function dibujoPorClick()
+export function dibujoPorClick()
 {
   var lineas = 50; //parseInt(texto.value);
   var l = 0;

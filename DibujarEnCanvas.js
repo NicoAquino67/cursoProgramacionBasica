@@ -1,5 +1,9 @@
+import { dibujarLinea } from "./platziEj/dibujo";
+import {dibujoPorClick} from "./platziEj/dibujo.js"
+
+
 const clicksito = document.getElementById("btnLines");
-clicksito.addEventListener("click", dibuCiclo);
+clicksito.addEventListener("click", dibujoPorClick);
 const canvas = document.getElementById("Canvas-zone");
 const lienzo = canvas.getContext("2d");
 const scale = 10;
@@ -11,40 +15,26 @@ var fromY = 0;
 var toX = 300;
 var contentTextBox = maxWidth.value;
 console.log(maxWidth);
-function Dibujar(fromXf, toXf, fromYf, toYf, colorf){
-    if (colorf == undefined)
-    {
-        colorf = "rgba(75, 75, 200, 0.5)";
-    }
-    lienzo.beginPath();
-    lienzo.strokeStyle = colorf;
-    lienzo.moveTo(fromXf, fromYf);
-    lienzo.lineTo(toXf, toYf);
-    lienzo.stroke();
-    lienzo.closePath();
-}
-
-//aniado un comentario para comprobar el commit, stage
 
 
 function dibujarPinkFloid(){
     var i;
     for(i = 0;i < 301;i++){
-        Dibujar(0,300,i,i,"rgba(0,0,0,1)");
-        Dibujar(0,300,i,i,"rgba(0,0,0,1)");
-        Dibujar(0,300,i,i,"rgba(0,0,0,1)");
+        dibujarLinea(0,300,i,i,"rgba(0,0,0,1)");
+        dibujarLinea(0,300,i,i,"rgba(0,0,0,1)");
+        dibujarLinea(0,300,i,i,"rgba(0,0,0,1)");
     }
     fromY = 200;
     toX = 130;
     for(i = 0; i < 8;i++){
-        Dibujar(0,toX,fromY,150,"rgba(255,255,255,1)");
+        dibujarLinea(0,toX,fromY,150,"rgba(255,255,255,1)");
         fromY++;
     }
     var coordenadas = {
         A: [80, 200],
         B: [150, 50]
     }
-    Dibujar(coordenadas.A[0],//xi
+    dibujarLinea(coordenadas.A[0],//xi
             coordenadas.B[0],//xf
             coordenadas.A[1],//yi
             coordenadas.B[1],//yf
@@ -53,7 +43,7 @@ function dibujarPinkFloid(){
             A: [80, 200],
             B: [200, 200]
         }        
-    Dibujar(coordenadas.A[0],
+    dibujarLinea(coordenadas.A[0],
             coordenadas.B[0],
             coordenadas.A[1],
             coordenadas.B[1],
@@ -62,23 +52,10 @@ function dibujarPinkFloid(){
             A: [150, 50],
             B: [200, 200]
         }    
-    Dibujar(coordenadas.A[0],
+    dibujarLinea(coordenadas.A[0],
             coordenadas.B[0],
             coordenadas.A[1],
             coordenadas.B[1],
             "rgba(255,255,255,1)");
         
-}
-
-function dibuCiclo(TextBox){
-    alert("ay!");
-    TextBox = parseInt(contentTextBox);
-    console.log(TextBox);
-    while(line < TextBox){
-        fromX = 10 * line;
-        toY = 10 * (line + 1);
-        line += 1;
-        Dibujar();
-        console.log();
-    }
 }
